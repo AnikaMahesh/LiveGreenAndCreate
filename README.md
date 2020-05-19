@@ -5,3 +5,6 @@ Anika's Community Project on the best way to live. It's simple..
 3. Share your Joy
 4. Repeat from 1
 
+Credits: 
+- Turtlewax Logo style graphics library (pen.js) from https://github.com/davebalmer/turtlewax
+
