@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Anika's Community Project</title>
+<style>
+	body { margin: 0; padding: 0; background: #fff; color: #000; font: 15px Helvetica; }
+	p { margin-left: 10px; }
+	a { color: #006; }
+</style>
+
+<!-- including the lib and an rgb to hsv color util function -->
+<script src="pen.js"></script>
+<script src="hsv.js"></script>
+<script>
+function $(id) {
+    return document.getElementById(id);
+}
+
+function clearCanvas() {
+    document.window.p.canvas.clearRect(0, 0, 800, 600);
+}
+
+// 
+// Add Event functions below
+//
+function compost() {
+    document.getElementById("textFeedback").value = "Great job! you have earned the square banner";
+    document.getElementById("square").style.visibility='visible';  
+}
+
+function reuse() {
+    document.getElementById("textFeedback").value = "Great job! you have earned the circle banner";
+    document.getElementById("circle").style.visibility='visible';  
+}
+
+//
+// Add graphics functions below
+//
+
+function drawSquare() {
+    // add a custom function to draw a square
+    p.square = function(size) 
+    {
+	for (var i = 0; i < 4; i++)
+	  this.go(size).turn(90);
+           // to be a good function, we want to allow chaining
+          return this;
+    }
+    p.pensize(1).fillstyle("#ff0").jump(50, 300).square(100).draw();
+}
+
+function drawCircle() {
+    // add a custom function to draw a function
+    p.circle = function(size) 
+    {
+	for (var i = 0; i < 360; i++)
+	  this.go(size).turn(1);
+           // to be a good function, we want to allow chaining
+          return this;
+    }
+    p.pensize(1).fillstyle("#ff0").jump(200 * Math.random(), 100 * Math.random()).circle(4 *  Math.random()).draw();
+}
+
+/* reference to global pen */
+var p;
+
+window.onload = function () {
+    p = new Pen("mycanvas");
+    $("textFeedback").value = "Do the tasks to get fun tools and tricks!";
+
+    $("compost").onclick = function() { compost(); };
+    $("reuse").onclick = function() { reuse(); };
+
+    $("square").onclick = function() { drawSquare(); };
+    $("circle").onclick = function() { drawCircle(); };
+};
+</script>
+</head>
+<body>
+  <table>
+    <tr>
+      <td>
+        <p>How did you live green today?</p> 
+        <!-- events -->       
+        <p><input id="compost" type="button" value="I composted something"></p>
+        <p><input id="reuse" type="button" value="I used a reusable bag"></p>
+      </td>
+      <td>
+        <!-- graphics -->
+        <p><input id="square" type="button" value="Square" style="visibility:hidden;"></p>
+        <p><input id="circle" type="button" value="Circle" style="visibility:hidden;"></p>
+      <td>
+        <textarea id="textFeedback" class="hide" style="height:600px; width:800px;"></textarea>
+      </td>
+      <td>
+        <canvas id="mycanvas" height="600" width="800"></canvas>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

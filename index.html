@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<div style="background-image: url('jpg/tree.jpg');">
+<head>
+	<title>LIVE GREEN AND CREATE!!!</title>
+<style>
+	body { margin: 0; padding: 0; color:#1aff00; font: 15px Helvetica; background: #366603;}
+
+	p { margin-left: 10px; }
+	a { color: #006; }
+  div.header{
+  width: 80px;
+  height: 40px;
+  background-color: red;
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 2px 7px;
+    font-size: 12px; 
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5), 0 3px 5px 0 rgba(0,0,0,0.5);
+}
+.button:hover {
+  background-color: #e5eb34;
+  color: #000 ;
+}
+@keyframes example {
+  0%   {background-color:blue; left:0px; top:0px;}
+  25%  {background-color:lightblue; left:100px; top:0px;}
+  50%  {background-color:violet; left:200px; top:0px;}
+  75%  {background-color:green; left:400px; top:0px;}
+  100% {background-color:darkgreen; left:800px; top:0px;}
+}
+  div.headers{
+  position: relative;
+  animation-name: there;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes there {
+  0%   {color:red; left:0px; top:0px;}
+  30%  {color:yellow; left:101px; top:0px;}
+  55%  {color:white; left:202px; top:0px;}
+  80%  {color:lightblue; left:404px; top:0px;}
+  100% {color:red; left:808px; top:0px;}
+}
+</style>
+
+<!-- including the lib and an rgb to hsv color util function -->
+<script src="js/pen.js"></script>
+<script src="js/hsv.js"></script>
+<script>
+function $(id) {
+    return document.getElementById(id);
+}
+
+function clearCanvas() {
+    document.window.p.canvas.clearRect(0, 0, 800, 600);
+}
+
+// 
+// Add Event functions below
+//
+function compost() {
+    document.getElementById("atext").value = "Great job! you have earned the square banner💰";
+    document.getElementById("square").style.visibility='visible';  
+}
+
+function reuse() {
+    document.getElementById("atext").value = "Great job! you have earned the circle banner ";
+    document.getElementById("circle").style.visibility='visible';  
+}
+
+function give() {
+    document.getElementById("atext").value = "Great job! you have earned the Create banner  'f' key for ← 'h' key for → 't' key for ↑ 'g' key for ↓ to draw";
+    document.getElementById("create").style.visibility='visible';  
+}
+function separate() {
+    document.getElementById("atext").value = "Great job! you have earned the star";
+    document.getElementById("star").style.visibility='visible';  
+}
+function meat() {
+    document.getElementById("atext").value = "Great job! you have earned the degree banner use 'a' key for ← 'd' key for→ 'w' key for ↑ 's' key for ↓ to draw";
+    document.getElementById("degree").style.visibility='visible';  
+}
+function walk() {
+   document.getElementById("atext").value = "Great job! you have earned THE banner 📁";
+   document.getElementById("banner").style.visibility='visible'; 
+}
+function conserve() {
+  document.getElementById("atext").value = "great job you have earned the fish🐬";
+  document.getElementById("fish").style.visibility='visible';
+}
+// Add graphics functions below
+//
+function clearstuff() {
+    // add a custom function to draw a square
+    p.impossible = function(size) 
+    {
+  for (var i = 0; i < 4; i++)
+    this.angle(0).turn(90).go(size).turn(90).go(size).turn(90).go(size).turn(90).go(size).turn(90).goto(250,250).angle(0);
+           // to be a good function, we want to allow chaining
+          return this;
+    }
+    p.pensize(1).penstyle("#366603").fillstyle("#366603").jump(0, 0).impossible(1000).draw();
+}
+ 
+function drawSquare() {
+    // add a custom function to draw a square
+    p.square = function(size) 
+    {
+	for (var i = 0; i < 4; i++)
+	  this.go(size * Math.random()).turn(90 * Math.random());
+           // to be a good function, we want to allow chaining
+          return this;
+    }
+    p.pensize(1).penstyle("#f00").jump(p.x, p.y).square(100).draw();
+}
+
+function drawCircle() {
+    // add a custom function to draw a function
+    p.circle = function(size) 
+    {
+	for (var i = 0; i < 360; i++)
+	  this.go(size).turn(1);
+           // to be a good function, we want to allow chaining
+          return this;
+    }
+    p.pensize(1).jump(p.x, p.y).circle(1).draw();
+
+}
+function centerpoint() {
+    // add a custom function to draw a function
+    p.center = function(size) 
+    {
+  for (var i = 0; i < 1; i++)
+    this.go(size).angle(0);
+           // to be a good function, we want to allow chaining
+          return this;
+    }
+    p.pensize(1).penstyle("#366603").jump(250,250).center(1/8).draw();
+
+}
+function drawLines() {
+    p.jump(100, 100);
+    
+    document.addEventListener('keydown', event => {
+         if (event.key == 't')
+         {
+            document.getElementById("textFeedback").value = "up (" + p.x + "," + p.y + ")";
+            p.pendown().pensize(2).penstyle("#0f1").fillstyle("#0f0").go(10).draw().jump(p.x, p.y);
+         }
+         else if (event.key == 'g')
+         {
+            document.getElementById("textFeedback").value = "down (" + p.x + "," + p.y + ")";
+            p.pendown().pensize(4).fillstyle("#0f0").penstyle("#0f0").back(10).draw().jump(p.x, p.y);
+         }
+         else if (event.key== 'h')
+         {
+            document.getElementById("textFeedback").value = "right (" + p.x + "," + p.y + ")";
+            p.pendown().pensize(4).fillstyle("#0f0").turn(45).penstyle("#00f").go(10).turn(-45).draw().jump(p.x, p.y);
+         }
+         else if (event.key== 'f')
+         {
+            document.getElementById("textFeedback").value = "left (" + p.x + "," + p.y + ")";
+            p.pendown().pensize(4).fillstyle("#0f0").penstyle("#0ff").turn(-45).go(10).turn(45).draw().jump(p.x, p.y);
+         }
+    });
+}
+
+function drawdegreelines() {
+   p.jump(100, 100);
+    
+    document.addEventListener('keydown', event => {
+         if (event.key == 'w')
+         {
+            document.getElementById("textFeedback").value = "up (" + p.x + "," + p.y + ")";
+            p.pendown().pensize(2).penstyle("#00f").go(10).draw().jump(p.x, p.y);
+         }
+         else if (event.key == 's')
+         {
+            document.getElementById("textFeedback").value = "down (" + p.x + "," + p.y + ")";
+            p.pendown().pensize(4).penstyle("#0f0").back(10).draw().jump(p.x, p.y);
+         }
+         else if (event.key== 'd')
+         {
+            document.getElementById("textFeedback").value = "right (" + p.x + "," + p.y + ")";
+            p.pendown().pensize(4).penstyle("#f00").turn(90).go(10).turn(-90).draw().jump(p.x, p.y);
+         }
+         else if (event.key== 'a')
+         {
+            document.getElementById("textFeedback").value = "left (" + p.x + "," + p.y + ")";
+            p.pendown().pensize(4).penstyle("#ff0").fillstyle("#0f0").turn(-90).go(10).turn(90).draw().jump(p.x, p.y);
+         }
+    });
+}
+function drawbox() {
+    p.banner = function(size) 
+    {
+  for (var i = 0; i < 4; i++)
+    this.go(size).turn(90).go(size).turn(90).go(size).turn(90).go(size).turn(90).back(size);
+          return this;
+    }
+    p.pensize(1).penstyle("#f00").jump(p.x, p.y).banner(10).draw();
+}
+
+function drawstar() {
+  p.star = function(size)
+{
+  for (var i = 0; i < 4; i++)
+    this.turn(60).go(size).turn(60).go(size).turn(100);
+          return this;
+    }
+    p.pensize(1).penstyle("#f00").jump(p.x, p.y).star(20 * Math.random()).draw();
+}
+
+function drawfish() {
+    p.fish = function(size) 
+    {
+  for (var i = 0; i < 1; i++)
+
+    this.go(size).turn(135).go(size).turn(270).go(size).turn(90).go(size).turn(90).go(size * 2).turn(180).go(size).turn(270).go(size).turn(270).go(size);
+          return this;
+    }
+    p.pensize(1).penstyle("#f00").fillstyle("#00ffff").jump(p.x, p.y).fish(10).draw();
+}  
+var p;
+var ib;
+
+window.onload = function () {
+    p = new Pen("mycanvas");
+    $("textFeedback").value = "Do the tasks to get fun tools and tricks!";
+//do it
+    $("compost").onclick = function() { compost(); };
+    $("reuse").onclick = function() { reuse(); };
+    $("give").onclick = function() { give(); };
+    $("meat").onclick = function() { meat(); };
+    $("walk").onclick = function() { walk(); };
+    $("conserve").onclick = function() { conserve(); };
+    $("separate").onclick = function() { separate(); };
+// result
+    $("square").onclick = function() { drawSquare(); };
+    $("circle").onclick = function() { drawCircle(); };
+    $("create").onclick = function() { drawLines(); };
+    $("degree").onclick = function() { drawdegreelines(); };
+    $("banner").onclick = function() { drawbox(); }
+    $("fish").onclick = function() { drawfish(); };
+    $("star").onclick = function() { drawstar(); };
+    $("clear").onclick = function() { clearstuff() };
+    $("center").onclick = function() { centerpoint() };
+    $("image").onclick = function() { $("savedImage").src = $("mycanvas").toDataURL("img/jpg"); };
+};
+
+</script>
+</head>
+<body>
+  <div class = header></div>
+  <div class = headers></div>
+  <table>
+    <tr>
+      <td>
+        <h1>LIVE GREEN AND CREATE</h1>
+    <tr>
+      <td>
+        <h3>How did you live green today?</h3> 
+        <p> Do it and press the button</p>
+        <p><input id="compost" type="button" class="button" value="I composted something."></p>
+        <p><input id="reuse" type="button" class="button" value="I used a reusable bag."></p>
+        <p><input id="give" type="button" class="button" value="I participated in a community cleanup event."></p>
+        <p><input id="meat" type="button" class="button" value="I avoided buying unessesary materials."></p>
+        <p><input id="walk" type="button" class="button" value="I walked instead of drove."></p>
+        <p><input id="conserve" type="button" class="button" value="I conserved water"></p>
+        <p><input id="separate" type="button" class="button" value="I seperated organic and recyclable materials from trash"></p>
+      </td>
+      <td>
+        <!-- graphics -->
+
+        <p><input id="banner" type="button" class="button" value="banner" style="visibility:hidden;"></p>   
+        <p><input id="square" type="button" class="button" value="The unpredictable polyhedron" style="visibility:hidden;"></p>
+        <p><input id="circle" type="button" class="button" value="Circle" style="visibility:hidden;"></p>
+        <p><input id="create" type="button" class="button" value="Create" style="visibility:hidden;"></p>
+        <p><input id="degree" type="button" class="button" value="Degree" style="visibility:hidden;"></p>  
+        <p><input id="fish" type="button" class="button" value="Fish" style="visibility:hidden;"></p> 
+        <p><input id="star" type="button" class="button" value="Star" style="visibility:hidden;"></p> 
+        <p><input id="clear" type="button" class="button" value="clear"></p>  
+        <p><input id="center" type="button" class="button" value="Center pen"></p>            
+      <td>
+        <textarea id="atext" class="hide" style="height:200px; width:200px;"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <canvas id="mycanvas" height="500" width="500" style="border:1px solid; background:#507d29 " ></canvas>
+        <p><input id="image" type="button" class="button" value="Save Image"></p>
+      </td>
+      <td>
+        <p><img id="savedImage" src="" height="500" width="500" style="border:1px" /></p>
+        <p>Last Saved Image</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://livegreenandcreate.azurewebsites.com" target="_blank" rel="noopener">
+           <img src="jpg/facebook.png" width="22px" height="22px" alt="Share with friends on Facebook">
+        </a>
+      </td>
+      <td>
+        <textarea id="textFeedback" class="hide" style="height:200px; width:200px; background:'#3eed7e'; visibility:hidden;" ></textarea>
+      </td>
+    </tr>
+  </table>
+</body>
+</div>
+</html>
