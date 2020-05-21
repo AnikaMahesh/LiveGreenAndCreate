@@ -39,32 +39,12 @@ class Application(tk.Frame):
         self.no_there["command"] = self.say
         self.no_there.pack(side="right")
         self.there = tk.Button(self)
-        """
-        self.there["bg"] = "orange"
-        self.there["text"] = "Reycle or repurpose something."
-        self.there["command"] = self.snappy
-        self.there.pack(side="right")
-        """
         self.nap = tk.Button(self)
         self.nap["text"] = "Avoid eating meat."
         self.nap["fg"] = "black"
         self.nap["bg"] = "yellow"
         self.nap["command"] = self.say_hi
         self.nap.pack(side="right")
-        """
-        self.naw = tk.Button(self)
-        self.naw["text"] = "Help clean up a part of your community."
-        self.naw["fg"] = "black"
-        self.naw["bg"] = "orange"
-        self.naw["command"] = self.arrow
-        self.naw.pack(side="right")
-        self.snell = tk.Button(self)
-        self.snell["text"] = "Conserve water"
-        self.snell["fg"] = "black"
-        self.snell["bg"] = "orange"
-        self.snell["command"] = self.mali
-        self.snell.pack(side="right")
-        """
         self.law = tk.Button(self)
         self.law["text"] = "Use less disposable materals."
         self.law["fg"] = "black"
@@ -335,50 +315,6 @@ class Application(tk.Frame):
     def aldoe(self):
         t.forward(20)
         t.color('black')
-    def snappy(self):
-        def eaglet():
-            s.speed(0)
-            s.hideturtle()
-            s.pendown
-            s.forward(100)
-            s.right(270)
-            s.forward(30)
-            s.right(90)
-            s.forward(20)
-            s.right(90)
-            s.forward(10)
-            s.right(90)
-            s.forward(15)
-            s.right(90)
-            s.forward(8)
-            s.right(90)
-            s.forward(4)
-            s.right(90)
-            s.forward(4)
-            s.right(90)
-            s.forward(4)
-            s.right(270)
-            s.forward(30)
-            s.right(90)
-            s.forward(100)
-            s.right(90)
-            s.forward(10)
-            s.right(90)
-        for cider in range(2):
-            eaglet()
-            s.goto(-250,-250)
-            for side in range(4) :
-                for side in range(10) :
-                    eaglet()
-                    s.clear()
-                    screen.update()
-                    s.forward(4)
-                for side in range(10) :
-                    eaglet()
-                    s.clear()
-                    screen.update()
-                    s.forward(-4)
-        s.goto(-250,-250)
     def arrow(self):
         global baba
         baba = baba+1
@@ -391,154 +327,6 @@ class Application(tk.Frame):
             self.npr.pack(side="bottom")
         else:
             print("Good job you are helping the environment!😀")
-    def arrow_b(self):
-        def baddy():
-            b.forward(30)
-            b.right(120)
-            b.forward(10)
-            b.right(180)
-            b.forward(10)
-            b.right(320)
-            b.forward(10)
-            b.right(180)
-            b.forward(10)
-            b.right(100)
-            b.forward(30)
-            b.right(180)
-        for sighht in range(5) :
-            for side in range(10) :
-                b.bgcolor('yellow')
-                b.hideturtle
-                baddy()
-                b.speed(0)
-                b.clear()
-                screen.update()
-                b.forward(10)
-            b.penup()
-            b.goto(-100,100)
-            b.pendown()
-        b.bgcolor('white')
-    def mali(self):
-        def fishy():
-            f.forward(60)
-            f.right(270)
-            f.forward(5)
-            f.right(90)
-            f.forward(20)
-            f.right(90)
-            f.forward(5)
-            f.right(270)
-            f.forward(20)
-            f.right(90)
-            f.forward(3)
-            f.right(90)
-            f.forward(3)
-            f.right(90)
-            f.forward(3)
-            f.right(90)
-            f.forward(3)
-            f.forward(10)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(10)
-            f.right(180)
-            f.forward(10)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(30)
-            f.right(270)
-            f.forward(10)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(10)
-            f.right(270)
-            f.forward(65)
-            f.right(90)
-            f.forward(5)
-            f.right(270)
-            f.forward(10)
-            f.right(90)
-            f.forward(15)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(25)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(10)
-            f.right(90)
-        def defy_fishy():
-            f.forward(60)
-            f.right(270)
-            f.forward(5)
-            f.right(90)
-            f.forward(20)
-            f.right(90)
-            f.forward(5)
-            f.right(270)
-            f.forward(20)
-            f.right(90)
-            f.forward(3)
-            f.right(90)
-            f.forward(3)
-            f.right(90)
-            f.forward(3)
-            f.right(90)
-            f.forward(3)
-            f.forward(10)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(10)
-            f.right(180)
-            f.forward(10)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(30)
-            f.right(270)
-            f.forward(5)
-            f.right(90)
-            f.forward(10)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(5)
-            f.right(180)
-            f.forward(65)
-            f.right(90)
-            f.forward(5)
-            f.right(270)
-            f.forward(10)
-            f.right(90)
-            f.forward(15)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(25)
-            f.right(90)
-            f.forward(5)
-            f.right(90)
-            f.forward(10)
-            f.right(90)
-        for side in range(10) :
-            f.speed(0)
-            f.hideturtle
-            fishy()
-            f.clear()
-            screen.update()
-            f.forward(10)
-            defy_fishy()
-            f.clear()
-            screen.update()
-            f.forward(10)
-        f.penup()
-        f.goto(0,0)
-        f.pendown()
     def magpie(self):
         global y
         if y == 1:
