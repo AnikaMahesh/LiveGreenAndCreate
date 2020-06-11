@@ -1,4 +1,4 @@
-Anika's Community Project on the best way to live. It's simple..
+What is the best way to live? Live green! How? It's simple..
 
 1. Live well - Strive to be green as you do everyday things
 2. Create/Contribute
